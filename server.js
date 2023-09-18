@@ -1,27 +1,13 @@
-
-// import { createServer } from 'node:http'
-
-// const server = createServer((request,response)=>{
-//      response.write('oi')
-    
-//     return response.end()
-// })
-
-// server.listen(3333)
-
 import { fastify } from 'fastify'
 import 'dotenv/config'
-// import { DatabaseMemory } from './db-memory.js'
+
 import {DatabasePostgress} from './database-postgres.js'
 
 const server = fastify()
 
 const database = new DatabasePostgress()
 
-// const database = new DatabaseMemory()
-//Route Parameter
-//Request Body
-//QUERY PARAMS || SEARCH PARAMS == PAGINATION,FILTER
+
 
 
 server.post('/videos',async(request, reply)=>{
@@ -68,4 +54,5 @@ server.delete('/videos/:id',async(request,reply)=>{
 
 server.listen({
     port: process.env.PORT ?? 3333,
+    
 })
