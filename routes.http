@@ -1,0 +1,27 @@
+POST http://localhost:3333/videos
+Content-type: application/json
+
+{
+    "title":"Minecraft",
+    "description":"plantando cogumelo",
+    "duration":260
+}
+
+###
+GET http://localhost:3333/videos
+###
+GET http://localhost:3333/videos?search=
+
+
+###
+PUT http://localhost:3333/videos/714306b8-a0e4-4101-9be6-36c49164bd2d
+Content-type: application/json
+
+{
+    "title":"Video 05",
+    "description":"Esse é o video 02",
+    "duration":180
+}
+
+###
+DELETE  http://localhost:3333/videos/05a9751e-3c50-4455-85d0-1afe81c97514
